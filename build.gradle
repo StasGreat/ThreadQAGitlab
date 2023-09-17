@@ -15,14 +15,14 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation 'io.rest-assured:rest-assured:4.4.0'
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
-    testImplementation 'com.codeborne:selenide:6.12.3'
+    testImplementation 'com.codeborne:selenide:6.12.2'
 
     implementation 'io.qameta.allure:allure-java-commons:2.12.1'
     implementation 'io.qameta.allure:allure-commandline:2.12.1'
     implementation 'io.qameta.allure:allure-rest-assured:2.12.1'
     implementation 'io.qameta.allure:allure-junit5:2.12.1'
     implementation 'io.qameta.allure:allure-assertj:2.12.1'
-    implementation 'io.qameta.allure:allure-selenide:2.23.0'
+    implementation 'io.qameta.allure:allure-selenide:2.22.2'
 }
 
 def apiTest = tasks.register("apiTests", Test) {
