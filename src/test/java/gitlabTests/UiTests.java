@@ -3,11 +3,15 @@ package gitlabTests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 @Tag("UI")
 public class UiTests {
@@ -20,10 +24,16 @@ public class UiTests {
     @BeforeEach
     public void openPage(){
         Selenide.open("https://www.google.com/");
+        SelenideElement rejectAllButton = $x("//*[@id='W0wltc']");
+        if (rejectAllButton.isDisplayed()){
+            System.out.println("rejectAllButton isDisplayed");
+            rejectAllButton.click();
+        }
+        System.out.println("rejectAllButton is NOT Displayed");
     }
 
     private void assertAnswer(String value){
-        $x("//input[@name='q']").sendKeys(value + "=" + Keys.ENTER);
+        $x("//*[@id='APjFqb']").sendKeys(value + "=" + Keys.ENTER);
         String answer = $x("//span[@id='cwos']").getText();
         Assertions.assertEquals("4", answer);
     }
