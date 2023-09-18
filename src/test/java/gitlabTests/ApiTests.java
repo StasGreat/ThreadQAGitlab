@@ -77,7 +77,7 @@ public class ApiTests {
                 .then().log().body()
                 .extract().as(MemberPojo.class);
 
-        Assertions.assertTrue(lastMember.getLaunches().size()==0);
+        Assertions.assertEquals(lastMember.getLaunches().size(),1);
     }
 
 }
